@@ -1,14 +1,17 @@
-# UCommand_WALL-E
-UCommand WALL-E control program with IR Code
+# UCommand_WALL-E IR Controller
+The control program of UCommand WALL-E with IR LED for Raspberry Pi3.
 
-* You can control UCommand WALL-E with IR LED using Raspberry Pi3.
-   * I got used one without original controller. But I found following site.
+* Abstract
+   * I got old used WALL-E from auction site but without no controller.
+   * I found analied IR control codes from following site.
    * http://www.hifi-remote.com/forums/viewtopic.php?t=12137
-   * Then I made this code and controlled successfully with IR LED.
+   * I made IR LED board and C code from scratch.
+   * Finally I got successfully controlled in 12 remote control commands.
 
 ![IMG_0120](https://user-images.githubusercontent.com/52347942/104117796-5ce23e80-5367-11eb-8b8f-f470dd248ce1.jpeg)
 
 # Signal Spec
+* http://www.hifi-remote.com/forums/viewtopic.php?t=12137
 
 ```
  Freq:    44 kHz
@@ -56,9 +59,45 @@ UCommand WALL-E control program with IR Code
  +6000 -2000 1010 10101001 10101001 +2000 -68000
 ```
 
+# Original Pictures
+## UCommand WALL-E & Original Remote Controller
+
 ![IMG_0086](https://user-images.githubusercontent.com/52347942/104117746-fceb9800-5366-11eb-8434-29a25016ac04.jpeg)
 
 ![IMG_0088](https://user-images.githubusercontent.com/52347942/104117760-18ef3980-5367-11eb-8930-d83f8c0ebe57.jpeg)
+
+# Setup
+* Connect pins of IR LED board.
+   * GPIO23 to IR LED out.
+   * 5V and GND
+
+# Build
+
+```
+> sudo apt install wiringpi
+> gcc ./wall-e_control.c -o ./wall-e_control.out -lwiringPi
+```
+
+# Run
+* run `wall-e_control.out` and type command number.
+
+```
+> wall-e_control.out
+1: BUTTON_AHEAD
+2: BUTTON_LIGHT
+3: BUTTON_TURN
+4: BUTTON_ROTATE
+5: BUTTON_CIRCLE
+6: BUTTON_DANCE
+7: BUTTON_MUSIC
+8: BUTTON_EYES
+9: BUTTON_TALK
+10: BUTTON_MECHA
+11: JOYSTICK_FORWARD
+12: JOYSTICK_BACKWARD
+0: QUIT
+INPUT COMMAND>
+```
 
 ![IMG_0090](https://user-images.githubusercontent.com/52347942/104117774-3a502580-5367-11eb-8563-f92abc0c8a87.jpeg)
 
