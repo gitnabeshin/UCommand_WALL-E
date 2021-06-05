@@ -66,6 +66,9 @@ The control program of UCommand WALL-E with IR LED for Raspberry Pi3.
 
 ![IMG_0088](https://user-images.githubusercontent.com/52347942/104117760-18ef3980-5367-11eb-8930-d83f8c0ebe57.jpeg)
 
+![SCHEMATIC](https://user-images.githubusercontent.com/52347942/120874582-3c4ea580-c5e2-11eb-97eb-cf968f15a39c.png)
+
+
 # Setup
 * Connect pins of IR LED board.
    * GPIO23 to IR LED out.
