@@ -66,8 +66,25 @@ The control program of UCommand WALL-E with IR LED for Raspberry Pi3.
 
 ![IMG_0088](https://user-images.githubusercontent.com/52347942/104117760-18ef3980-5367-11eb-8930-d83f8c0ebe57.jpeg)
 
+# Schematic
+
 ![SCHEMATIC](https://user-images.githubusercontent.com/52347942/120874582-3c4ea580-c5e2-11eb-97eb-cf968f15a39c.png)
 
+| No.| index       | item                    | num |
+| -- | ----------- | ----------------------- | --- |
+| 1  | IR LED 1-3  | IR-LED (OSI5FU5111C-40) | 3   |
+| 2  | R1-3        | Resistor (10 ohm)       | 3   |
+| 3  | R1(sorry it should be R4) | Resistor (2.2K ohm)     | 1   |
+| 4  | N           | Transistor (2SC1815)    | 1   |
+| 5  | IR Reciever | (not used)              | 0   |
+
+NOTE
+
+* IR Reciever is not needed for this case.
+  * This WALL-E uses 44kHz IR signal.
+  * But popular IR Reciever is for 38kHz signal.
+* Pin assignment of 2SC1815
+  * E, C, B (from left)
 
 # Setup
 * Connect pins of IR LED board.
